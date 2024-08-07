@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Commit List</title>
+</head>
+<body>
+    <h1>Commit List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Hash</th>
+                <th>Date</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="commit : ${commitList}">
+                <td th:text="${commit.commitHash}">Commit Hash</td>
+                <td th:text="${commit.commitDate}">Date</td>
+                <td th:text="${commit.authorName}">Author</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
